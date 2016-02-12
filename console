@@ -1,0 +1,20 @@
+#!/bin/bash
+
+function init
+{
+    docker pull ubuntu:16.04
+    build
+}
+
+function build
+{
+    docker build -t test .
+    run
+}
+
+function run
+{
+    docker run -v $(pwd):/var/www -ti test
+}
+
+$1
