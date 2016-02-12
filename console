@@ -14,7 +14,7 @@ function build
 
 function run
 {
-    docker run -v $(pwd):/var/www -ti test
+    docker run -p 8080:80 -v $(pwd):/var/www -ti test
 }
 
 $1
